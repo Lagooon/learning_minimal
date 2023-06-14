@@ -12,16 +12,19 @@ import sys
 import copy
 
 def generate(input_folder, output_file, goal_samples):
-	print("generating " + name)
+	#print("generating " + name)
 	
 	#find the number of samples
-	first_eval = "./bin/data_sampler " + input_folder + " 10 " + mode + " 1 " + " > " + output_file
+	#first_eval = "./bin/data_sampler " + input_folder + " 10 " + mode + " 1 " + " > " + output_file
+	first_eval = f"./BIN/data_sampler {input_folder} 10 > {output_file}"
 	first_samples = os.system(first_eval)
 	first_samples = sum(1 for line in open(output_file))
+	#print(goal_samples, first_samples)
 	samples = 10*goal_samples / first_samples
 	
 	#generate the problems
-	second_eval = "./bin/data_sampler " + input_folder + " " + str(int(samples)+1) + " " + mode + " 1 " + " > " + output_file
+	#second_eval = "./bin/data_sampler " + input_folder + " " + str(int(samples)+1) + " " + mode + " 1 " + " > " + output_file
+	second_eval = f"./BIN/data_sampler {input_folder} {int(samples)+1} > {output_file}"
 	print(second_eval)
 	#return
 	final_samples = os.system(second_eval)
@@ -43,7 +46,7 @@ if __name__ == "__main__":
 		exit()
 	input_folder = sys.argv[1]+"/"
 	output_file = sys.argv[2]
-	goal_samples = sys.argv[3]+"/"
+	goal_samples = int(sys.argv[3])#+"/"
 	generate(input_folder, output_file, goal_samples)
 	
 	

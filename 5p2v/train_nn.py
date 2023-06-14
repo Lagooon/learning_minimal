@@ -12,31 +12,26 @@ import sys
 import copy
 
 class Net(nn.Module):
-    def __init__(self, anchors):
-        super(Net, self).__init__()
-        self.fc1 = nn.Linear(20,100)
-        self.relu1 = nn.PReLU(100, 0.25)
-        self.fc2 = nn.Linear(100,100)
-        self.relu2 = nn.PReLU(100, 0.25)
-        self.fc4 = nn.Linear(100,100)
-        self.relu4 = nn.PReLU(100, 0.25)
-        self.fc5 = nn.Linear(100,100)
-        self.relu5 = nn.PReLU(100, 0.25)
-        self.fc6 = nn.Linear(100,100)
-        self.relu6 = nn.PReLU(100, 0.25)
-        self.fc7 = nn.Linear(100,100)
-        self.relu7 = nn.PReLU(100, 0.25)
-        self.drop3 = nn.Dropout(0.5)
-        self.fc3 = nn.Linear(100,anchors+1)
-    def forward(self, x):
-        x = self.relu1(self.fc1(x))
-        x = self.relu2(self.fc2(x))
-        x = self.relu4(self.fc4(x))
-        x = self.relu5(self.fc5(x))
-        x = self.relu6(self.fc6(x))
-        x = self.relu7(self.fc7(x))
-        x = self.drop3(x)
-        return self.fc3(x)
+	def __init__(self, anchors, num_layers = 6, hidden_dim = 100):
+		super(Net, self).__init__()
+
+		layers = []
+		input_dim = 20
+		for i in range(num_layers):
+			layers += [
+				nn.Linear(input_dim, hidden_dim),
+				nn.BatchNorm1d(hidden_dim),
+				nn.PReLU(hidden_dim, 0.25)
+			]
+			input_dim = hidden_dim
+		self.MLP = nn.Sequential(*layers)
+		self.drop = nn.Dropout(0.5)
+		self.fc = nn.Linear(100,anchors+1)
+
+	def forward(self, x):
+		x = self.MLP(x)
+		x = self.drop(x)
+		return self.fc(x)
 
 if __name__ == "__main__":
 	print("Neural network training")
@@ -78,13 +73,19 @@ if __name__ == "__main__":
 	net = Net(anchors)
 	print(net)
 	#set up the optimizer
-	criterion = nn.CrossEntropyLoss()
+	criterion = nn.CrossEntropyLoss(ignore_index = 0)
 	optimizer = optim.SGD(net.parameters(), lr=lr_, momentum=momentum_, weight_decay=weight_decay_) # Adam and its variants converge faster but SGD with momentum reaches a better result
 
 	# load the training and validation data
 	print("Loading data from folder " + model_folder)
 	X_train = np.loadtxt(model_folder+"/X_train.txt")
 	Y_train = np.loadtxt(model_folder+"/Y_train.txt")
+	a = np.zeros((27), dtype=np.int32)
+	for y in Y_train:
+		y = int(y)
+		a[y] = a[y] + 1
+	print(a)
+	
 	X_test = np.loadtxt(model_folder+"/X_val.txt")
 	Y_test = np.loadtxt(model_folder+"/Y_val.txt")
 	print("Data loaded.")
@@ -132,6 +133,15 @@ if __name__ == "__main__":
 			loss = criterion(outputs, Y)
 			loss.backward()
 
+			'''
+			for i in net.children():
+				
+				if hasattr(i, 'weight'):
+
+					print(i)
+					print(i.weight.grad)
+					print(torch.norm(i.weight.grad))
+			'''
 			#update the model
 			optimizer.step()
 			
@@ -155,6 +165,8 @@ if __name__ == "__main__":
 		#total tracks (non trash)
 		c1_4 = sum((klasse != 0));
 
+		print(c1, c1_1, c1_2, c1_3, c1_4, sum((y_test_tensor == 0)), sum((y_test_tensor != 0)))
+
 		if c1_1.numpy() > best_val:
 			best_val = c1_1.numpy()
 			best_net = copy.deepcopy(net)
@@ -165,7 +177,9 @@ if __name__ == "__main__":
 			f.write(str(layers)+"\n")
 			id = 0
 			np.set_printoptions(edgeitems=200, linewidth=1000000, precision=7, suppress=True)
+			'''
 			for param in net.parameters():
+				print(param)
 				if id%3==0:
 					print(str(param.size(0))+" "+str(param.size(1)))
 					f.write(str(param.size(0))+" "+str(param.size(1))+"\n")
@@ -179,6 +193,7 @@ if __name__ == "__main__":
 					a = param.detach().numpy()
 					f.write(' '.join(map(str, a))+"\n")
 				id = id+1
+			'''
 			
 
 		print(epoch+1, ' | ', c1_1.numpy(), ' | ', c1_2.numpy(), ' | ', c1_3.numpy() , ' | ', round(t1,6))
