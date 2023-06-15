@@ -1,0 +1,162 @@
+/home/ubuntu/anaconda3/lib/python3.8/site-packages/torch/utils/data/dataloader.py:554: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+tensor(1919) tensor(1919) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+1  |  1919  |  0  |  0  |  0.115388
+tensor(1828) tensor(1828) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+2  |  1828  |  0  |  0  |  0.109485
+tensor(2045) tensor(2045) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+3  |  2045  |  0  |  0  |  0.128195
+tensor(1916) tensor(1916) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+4  |  1916  |  0  |  0  |  0.126913
+tensor(1959) tensor(1959) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+5  |  1959  |  0  |  0  |  0.08778
+tensor(2104) tensor(2104) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+6  |  2104  |  0  |  0  |  0.09565
+tensor(2073) tensor(2073) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+7  |  2073  |  0  |  0  |  0.121161
+tensor(2172) tensor(2172) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+8  |  2172  |  0  |  0  |  0.091196
+tensor(2227) tensor(2227) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+9  |  2227  |  0  |  0  |  0.101797
+tensor(2239) tensor(2239) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+10  |  2239  |  0  |  0  |  0.087001
+tensor(2326) tensor(2326) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+11  |  2326  |  0  |  0  |  0.092304
+tensor(2213) tensor(2213) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+12  |  2213  |  0  |  0  |  0.08682
+tensor(2261) tensor(2261) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+13  |  2261  |  0  |  0  |  0.089585
+tensor(2326) tensor(2326) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+14  |  2326  |  0  |  0  |  0.086431
+tensor(2346) tensor(2346) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+15  |  2346  |  0  |  0  |  0.114459
+tensor(2246) tensor(2246) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+16  |  2246  |  0  |  0  |  0.087578
+tensor(2225) tensor(2225) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+17  |  2225  |  0  |  0  |  0.088021
+tensor(2204) tensor(2204) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+18  |  2204  |  0  |  0  |  0.092463
+tensor(2314) tensor(2314) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+19  |  2314  |  0  |  0  |  0.088033
+tensor(2352) tensor(2352) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+20  |  2352  |  0  |  0  |  0.088664
+tensor(2335) tensor(2335) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+21  |  2335  |  0  |  0  |  0.088409
+tensor(2457) tensor(2457) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+22  |  2457  |  0  |  0  |  0.086202
+tensor(2491) tensor(2491) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+23  |  2491  |  0  |  0  |  0.116799
+tensor(2454) tensor(2454) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+24  |  2454  |  0  |  0  |  0.090601
+tensor(2341) tensor(2341) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+25  |  2341  |  0  |  0  |  0.088379
+tensor(2302) tensor(2302) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+26  |  2302  |  0  |  0  |  0.087837
+tensor(2296) tensor(2296) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+27  |  2296  |  0  |  0  |  0.092878
+tensor(2295) tensor(2295) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+28  |  2295  |  0  |  0  |  0.090409
+tensor(2448) tensor(2448) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+29  |  2448  |  0  |  0  |  0.089703
+tensor(2286) tensor(2286) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+30  |  2286  |  0  |  0  |  0.093339
+tensor(2330) tensor(2330) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+31  |  2330  |  0  |  0  |  0.08556
+tensor(2253) tensor(2253) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+32  |  2253  |  0  |  0  |  0.109203
+tensor(2345) tensor(2345) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+33  |  2345  |  0  |  0  |  0.087151
+tensor(2233) tensor(2233) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+34  |  2233  |  0  |  0  |  0.089569
+tensor(2434) tensor(2434) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+35  |  2434  |  0  |  0  |  0.090545
+tensor(2461) tensor(2461) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+36  |  2461  |  0  |  0  |  0.090406
+tensor(2223) tensor(2223) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+37  |  2223  |  0  |  0  |  0.089673
+tensor(2479) tensor(2479) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+38  |  2479  |  0  |  0  |  0.100277
+tensor(2337) tensor(2337) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+39  |  2337  |  0  |  0  |  0.092542
+tensor(2394) tensor(2394) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+40  |  2394  |  0  |  0  |  0.088348
+tensor(2287) tensor(2287) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+41  |  2287  |  0  |  0  |  0.08949
+tensor(2357) tensor(2357) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+42  |  2357  |  0  |  0  |  0.091674
+tensor(2249) tensor(2249) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+43  |  2249  |  0  |  0  |  0.094006
+tensor(2283) tensor(2283) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+44  |  2283  |  0  |  0  |  0.091367
+tensor(2410) tensor(2410) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+45  |  2410  |  0  |  0  |  0.087949
+tensor(2433) tensor(2433) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+46  |  2433  |  0  |  0  |  0.092753
+tensor(2373) tensor(2373) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+47  |  2373  |  0  |  0  |  0.109648
+tensor(2400) tensor(2400) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+48  |  2400  |  0  |  0  |  0.091213
+tensor(2382) tensor(2382) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+49  |  2382  |  0  |  0  |  0.095799
+tensor(2352) tensor(2352) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+50  |  2352  |  0  |  0  |  0.092745
+tensor(2392) tensor(2392) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+51  |  2392  |  0  |  0  |  0.091392
+tensor(2273) tensor(2273) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+52  |  2273  |  0  |  0  |  0.087411
+tensor(2337) tensor(2337) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+53  |  2337  |  0  |  0  |  0.088385
+tensor(2283) tensor(2283) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+54  |  2283  |  0  |  0  |  0.090829
+tensor(2255) tensor(2255) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+55  |  2255  |  0  |  0  |  0.089657
+tensor(2413) tensor(2413) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+56  |  2413  |  0  |  0  |  0.094438
+tensor(2364) tensor(2364) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+57  |  2364  |  0  |  0  |  0.08777
+tensor(2263) tensor(2263) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+58  |  2263  |  0  |  0  |  0.088274
+tensor(2446) tensor(2446) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+59  |  2446  |  0  |  0  |  0.117569
+tensor(2197) tensor(2197) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+60  |  2197  |  0  |  0  |  0.089608
+tensor(2395) tensor(2395) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+61  |  2395  |  0  |  0  |  0.089676
+tensor(2369) tensor(2369) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+62  |  2369  |  0  |  0  |  0.088129
+tensor(2256) tensor(2256) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+63  |  2256  |  0  |  0  |  0.090361
+tensor(2268) tensor(2268) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+64  |  2268  |  0  |  0  |  0.08833
+tensor(2356) tensor(2356) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+65  |  2356  |  0  |  0  |  0.095415
+tensor(2322) tensor(2322) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+66  |  2322  |  0  |  0  |  0.088774
+tensor(2244) tensor(2244) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+67  |  2244  |  0  |  0  |  0.099104
+tensor(2389) tensor(2389) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+68  |  2389  |  0  |  0  |  0.089191
+tensor(2358) tensor(2358) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+69  |  2358  |  0  |  0  |  0.088872
+tensor(2357) tensor(2357) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+70  |  2357  |  0  |  0  |  0.097493
+tensor(2322) tensor(2322) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+71  |  2322  |  0  |  0  |  0.087387
+tensor(2319) tensor(2319) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+72  |  2319  |  0  |  0  |  0.088145
+tensor(2287) tensor(2287) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+73  |  2287  |  0  |  0  |  0.098875
+tensor(2235) tensor(2235) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+74  |  2235  |  0  |  0  |  0.091016
+tensor(2359) tensor(2359) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+75  |  2359  |  0  |  0  |  0.125431
+tensor(2258) tensor(2258) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+76  |  2258  |  0  |  0  |  0.087285
+tensor(2301) tensor(2301) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+77  |  2301  |  0  |  0  |  0.090612
+tensor(2299) tensor(2299) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+78  |  2299  |  0  |  0  |  0.088006
+tensor(2179) tensor(2179) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+79  |  2179  |  0  |  0  |  0.086456
+tensor(2188) tensor(2188) tensor(0) tensor(0) tensor(23656) tensor(1749) tensor(21907)
+80  |  2188  |  0  |  0  |  0.091208

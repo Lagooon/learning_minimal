@@ -1,0 +1,67 @@
+{
+    "os": "Linux-5.4.0-139-generic-x86_64-with-glibc2.10",
+    "python": "3.8.0",
+    "heartbeatAt": "2023-06-15T08:04:29.531598",
+    "startedAt": "2023-06-15T08:04:26.661955",
+    "docker": null,
+    "cuda": "11.0.228",
+    "args": [
+        "--use-wandb"
+    ],
+    "state": "running",
+    "program": "train_nn.py",
+    "codePath": "5p2v/train_nn.py",
+    "git": {
+        "remote": "git@github.com:Lagooon/learning_minimal.git",
+        "commit": "fbee9b08bf8f932f43566e58fccf18b0cfb8cf41"
+    },
+    "email": null,
+    "root": "/home/ubuntu/learning_minimal",
+    "host": "VM-0-8-ubuntu",
+    "username": "ubuntu",
+    "executable": "/home/ubuntu/anaconda3/bin/python",
+    "cpu_count": 4,
+    "cpu_count_logical": 4,
+    "cpu_freq": {
+        "current": 2099.996,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2099.996,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2099.996,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2099.996,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2099.996,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "total": 147.5437126159668,
+        "used": 60.16883087158203
+    },
+    "gpu": "Tesla P4",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "Tesla P4",
+            "memory_total": 7981694976
+        }
+    ],
+    "memory": {
+        "total": 18.797569274902344
+    }
+}

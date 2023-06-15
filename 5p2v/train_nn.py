@@ -7,132 +7,122 @@ import torch.optim as optim
 from torch.utils.data import TensorDataset, DataLoader
 import os
 import time
-import gc
-import sys
-import copy
+import random
+import yaml
+import socket
+import wandb
+import argparse
+import networks.mlp.mlp
 
-class Net(nn.Module):
-	def __init__(self, anchors, num_layers = 6, hidden_dim = 100):
-		super(Net, self).__init__()
+curdir = os.path.dirname(os.path.abspath(__file__))
 
-		layers = []
-		input_dim = 20
-		for i in range(num_layers):
-			layers += [
-				nn.Linear(input_dim, hidden_dim),
-				nn.BatchNorm1d(hidden_dim),
-				nn.PReLU(hidden_dim, 0.25)
-			]
-			input_dim = hidden_dim
-		self.MLP = nn.Sequential(*layers)
-		self.drop = nn.Dropout(0.5)
-		self.fc = nn.Linear(100,anchors+1)
-
-	def forward(self, x):
-		x = self.MLP(x)
-		x = self.drop(x)
-		return self.fc(x)
-
-if __name__ == "__main__":
-	print("Neural network training")
-
-	# parse the arguments
-	argc = len(sys.argv)
-	if argc < 3:
-		print("Run as:")
-		print("python3 train_nn.py model_folder trainParam")
-		exit()
-	model_folder = sys.argv[1]
-	param_file = sys.argv[2]
-
-	#read and parse the trainParam file
-	f = open(param_file, "r")
-	for i in range(0,9):
-		f.readline()
-	line = f.readline().split(" ")
-	anchors = int(line[0])
-
-	line = f.readline().split(" ")
-	lr_ = float(line[0])
-
-	line = f.readline().split(" ")
-	momentum_ = float(line[0])
-
-	line = f.readline().split(" ")
-	weight_decay_ = float(line[0])
-
-	line = f.readline().split(" ")
-	batch_size_ = int(line[0])
-
-	line = f.readline().split(" ")
-	epochs = int(line[0])
+def get_args():
+	parser = argparse.ArgumentParser()
+	#wandb
+	parser.add_argument("--use-wandb", action='store_true')
+	parser.add_argument("--wandb-project", type=str, default="cv-project")
+	parser.add_argument("--wandb-group", type=str, default="mlp")
+	parser.add_argument("--job-type", type=str, default="training")
+	parser.add_argument("--wandb-name", type=str, default="")
+	parser.add_argument("--user-name", type=str, default="dl_project_")
+	#parser.add_argument("--hyperparameter-search", action='store_true')
 	
-	f.close()
+	parser.add_argument("--model", type=str, default="mlp")
+	parser.add_argument("--dataset-folder", type=str, default=os.path.join(curdir, "MODEL"))
+	parser.add_argument("--anchors", default=26, type=int)
+	#parser.add_argument("--early-stopping", action='store_true')
+	parser.add_argument("--seed", default=1, type=int)
+	parser.add_argument("--batch-size", default=32, type=int)
+	parser.add_argument("--lr", default=1e-3, type=float)
+	#parser.add_argument("--min-lr", default=1e-6, type=float) 
+	parser.add_argument("--weight-decay", default=0, type=float)
+	parser.add_argument("--momentum", default=0.9, type=float)
+	parser.add_argument("--num-epoch", default=80, type=int)
+	parser.add_argument("--save-interval", default=3, type=int)
+	parser.add_argument("--save-dir", default='models')
+	parser.add_argument("--total-updates", default=50000, type=int)
+	parser.add_argument("--optimizer", default='sgd', type=str)
+	args = parser.parse_args()
+	setattr(args, 'save_dir', os.path.join(curdir, args.save_dir, args.model))
+	'''
+	parser.add_argument(
+		'--gradient-accumulation-steps',
+		type=int,
+		default=1,
+		help=
+		"Number of updates steps to accumualte before performing a backward/update pass."
+	)
+	parser.add_argument("--local_rank", default=0, type=int, help="Please ignore and do not set this argument.")
+	parser.add_argument("--dist_url", default="env://", type=str, help="""url used to set up
+		distributed training; see https://pytorch.org/docs/stable/distributed.html""")
+	'''
+	return args
 
+def train(args):
+
+	if args.use_wandb:
+		run = wandb.init(config = args,
+						project = args.wandb_project,
+						group = args.wandb_group,
+						entity = args.user_name,
+						notes = socket.gethostname(),
+						name = args.wandb_name,
+						job_type = args.job_type)
+		if args.wandb_name == "":
+			wandb.run.name = 'lr{:.2e}-weightdecay{:.2e}-{}-seed{}'.format(args.lr, args.weight_decay, args.optimizer, args.seed)
+	
+	os.makedirs(args.save_dir, exist_ok=True)
 	# set up the network
-	net = Net(anchors)
-	print(net)
+	net = getattr(getattr(getattr(networks, args.model), args.model), 'Net')(args.anchors)
 	#set up the optimizer
 	criterion = nn.CrossEntropyLoss(ignore_index = 0)
-	optimizer = optim.SGD(net.parameters(), lr=lr_, momentum=momentum_, weight_decay=weight_decay_) # Adam and its variants converge faster but SGD with momentum reaches a better result
-
+	if args.optimizer == 'sgd':
+		optimizer = optim.SGD(net.parameters(), lr=args.lr, momentum=args.momentum, weight_decay=args.weight_decay)
+	elif args.optimizer == 'adam':
+		optimizer = optim.SGD(net.parameters(), lr=args.lr, weight_decay=args.weight_decay)
+	else:
+		print('No such optimizer')
+		exit(1)
 	# load the training and validation data
-	print("Loading data from folder " + model_folder)
-	X_train = np.loadtxt(model_folder+"/X_train.txt")
-	Y_train = np.loadtxt(model_folder+"/Y_train.txt")
+	X_train = np.loadtxt(args.dataset_folder+"/X_train.txt")
+	Y_train = np.loadtxt(args.dataset_folder+"/Y_train.txt")
+	X_test = np.loadtxt(args.dataset_folder+"/X_val.txt")
+	Y_test = np.loadtxt(args.dataset_folder+"/Y_val.txt")
+	X_train_tensor = torch.Tensor(X_train)
+	y_train_tensor = torch.LongTensor(Y_train)
+	X_test_tensor = torch.Tensor(X_test)
+	y_test_tensor = torch.LongTensor(Y_test)
+	train_dataset = TensorDataset(X_train_tensor,y_train_tensor)
+	train_dl = torch.utils.data.DataLoader(train_dataset,
+											batch_size=args.batch_size,
+											shuffle = True,
+											num_workers = 8)
+	'''
 	a = np.zeros((27), dtype=np.int32)
 	for y in Y_train:
 		y = int(y)
 		a[y] = a[y] + 1
 	print(a)
-	
-	X_test = np.loadtxt(model_folder+"/X_val.txt")
-	Y_test = np.loadtxt(model_folder+"/Y_val.txt")
-	print("Data loaded.")
-	print("Converting data to the pytorch tensors.")
-	X_train_tensor = torch.Tensor(X_train)
-	y_train_tensor = torch.LongTensor(Y_train)
-	X_test_tensor = torch.Tensor(X_test)
-	y_test_tensor = torch.LongTensor(Y_test)
-	print("Data converted.")
-
-	# create the datset
-	train_dataset = TensorDataset(X_train_tensor,y_train_tensor)
-	#find the number of the processor cores
-	num_workers = os.cpu_count()
-	if 'sched_getaffinity' in dir(os):
-		num_workers = len(os.sched_getaffinity(0))
-	print(str(num_workers) + " processor cores used.")
-	#create the data loader
-	BS = batch_size_ # batch size
-	train_dl = torch.utils.data.DataLoader(train_dataset,
-											batch_size= batch_size_,
-											shuffle = True, # important thing to do for training.
-											num_workers = num_workers)
+	'''
 
 	# train the NN
-	best_val = -1;
-	best_net = copy.deepcopy(net)
-	for epoch in range(epochs):
-		print("Epoch "+str(epoch))
+	#best_val = -1
+	#best_net = copy.deepcopy(net)
+	for epoch in range(args.num_epoch):
+		#print("Epoch "+str(epoch))
 		net.train()
-		#iterate over the batches in the training set
-		#for i, data2 in en:
+		losses = []
 		for i, (X, Y) in enumerate(train_dl):
-			if i%2000 == 0:
-				print(i)
-				gc.collect()
+			#if i%2000 == 0:
+			#	print(i)
+			#	gc.collect()
 		
-			#zero the gradient
 			optimizer.zero_grad()
-
-			#feed forward
 			outputs = net(X)
-		
-			#compute the loss by backpropagation
 			loss = criterion(outputs, Y)
 			loss.backward()
-
+			optimizer.step()
+			losses.append(loss.item())
 			'''
 			for i in net.children():
 				
@@ -142,31 +132,41 @@ if __name__ == "__main__":
 					print(i.weight.grad)
 					print(torch.norm(i.weight.grad))
 			'''
-			#update the model
-			optimizer.step()
-			
+
+		if args.use_wandb:  
+			wandb.log({"loss": np.mean(losses), 
+				"lr": optimizer.param_groups[0]['lr']}, step = epoch + 1)
 
 		#validate
 		net.eval()
 		start = time.time()
 		outputs = net(X_test_tensor)
 		end = time.time()
-		t1 = end-start;
+		t1 = end-start
 
 		klasse = torch.argmax(outputs, dim=1)
 		#all correct classifications
-		c1 = sum(klasse==y_test_tensor);
+		c1 = sum(klasse==y_test_tensor)
 		#correct tracks
-		c1_1 = sum((klasse==y_test_tensor) * (klasse != 0));
+		c1_1 = sum((klasse==y_test_tensor) * (klasse != 0))
 		#correct trash
-		c1_2 = sum((klasse==y_test_tensor) * (klasse == 0));
+		c1_2 = sum((klasse==y_test_tensor) * (klasse == 0))
 		#total trash
-		c1_3 = sum((klasse == 0));
+		c1_3 = sum((klasse == 0))
 		#total tracks (non trash)
-		c1_4 = sum((klasse != 0));
+		c1_4 = sum((klasse != 0))
 
 		print(c1, c1_1, c1_2, c1_3, c1_4, sum((y_test_tensor == 0)), sum((y_test_tensor != 0)))
+		print(epoch+1, ' | ', c1_1.numpy(), ' | ', c1_2.numpy(), ' | ', c1_3.numpy() , ' | ', round(t1,6))
+		print("")
 
+		if args.use_wandb:  
+			wandb.log({"eval_acc": c1_1 / c1_4}, step = epoch + 1)
+			
+		if epoch % args.save_interval == 0:
+			torch.save(net, args.save_dir + "/ckpt_{}.pt".format(epoch + 1))
+
+		'''
 		if c1_1.numpy() > best_val:
 			best_val = c1_1.numpy()
 			best_net = copy.deepcopy(net)
@@ -177,7 +177,6 @@ if __name__ == "__main__":
 			f.write(str(layers)+"\n")
 			id = 0
 			np.set_printoptions(edgeitems=200, linewidth=1000000, precision=7, suppress=True)
-			'''
 			for param in net.parameters():
 				print(param)
 				if id%3==0:
@@ -193,8 +192,17 @@ if __name__ == "__main__":
 					a = param.detach().numpy()
 					f.write(' '.join(map(str, a))+"\n")
 				id = id+1
-			'''
-			
+		'''
 
-		print(epoch+1, ' | ', c1_1.numpy(), ' | ', c1_2.numpy(), ' | ', c1_3.numpy() , ' | ', round(t1,6))
-		print("")
+if __name__ == "__main__":
+	args = get_args()
+	torch.manual_seed(args.seed)
+	random.seed(args.seed)
+	np.random.seed(args.seed)
+	
+	with open(os.path.join(curdir, 'networks', args.model, 'config.yaml'), 'r') as f:
+		config = yaml.load(f, Loader=yaml.FullLoader)
+		for k, v in config.items():
+			setattr(args, k, v)
+	print(args)
+	train(args)

@@ -1,0 +1,4 @@
+wandb_group: 'mlp'
+model: 'mlp'
+lr: 1.0e-3
+weight_decay: 0

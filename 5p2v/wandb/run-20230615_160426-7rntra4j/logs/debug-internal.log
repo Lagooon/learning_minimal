@@ -1,0 +1,867 @@
+2023-06-15 16:04:26,675 INFO    StreamThr :395974 [internal.py:wandb_internal():86] W&B internal server running at pid: 395974, started at: 2023-06-15 16:04:26.674722
+2023-06-15 16:04:26,677 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status
+2023-06-15 16:04:26,751 INFO    WriterThread:395974 [datastore.py:open_for_write():85] open: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/run-7rntra4j.wandb
+2023-06-15 16:04:26,751 DEBUG   SenderThread:395974 [sender.py:send():375] send: header
+2023-06-15 16:04:26,764 DEBUG   SenderThread:395974 [sender.py:send():375] send: run
+2023-06-15 16:04:27,502 INFO    SenderThread:395974 [dir_watcher.py:__init__():219] watching files in: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files
+2023-06-15 16:04:27,502 INFO    SenderThread:395974 [sender.py:_start_run_threads():1124] run started: 7rntra4j with start time 1686816266.677957
+2023-06-15 16:04:27,502 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:04:27,503 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:04:27,505 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: check_version
+2023-06-15 16:04:27,505 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: check_version
+2023-06-15 16:04:28,504 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_created():278] file/dir created: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:04:29,514 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: run_start
+2023-06-15 16:04:29,518 DEBUG   HandlerThread:395974 [system_info.py:__init__():31] System info init
+2023-06-15 16:04:29,518 DEBUG   HandlerThread:395974 [system_info.py:__init__():46] System info init done
+2023-06-15 16:04:29,518 INFO    HandlerThread:395974 [system_monitor.py:start():181] Starting system monitor
+2023-06-15 16:04:29,518 INFO    SystemMonitor:395974 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-06-15 16:04:29,518 INFO    HandlerThread:395974 [system_monitor.py:probe():201] Collecting system info
+2023-06-15 16:04:29,519 INFO    SystemMonitor:395974 [interfaces.py:start():190] Started cpu monitoring
+2023-06-15 16:04:29,520 INFO    SystemMonitor:395974 [interfaces.py:start():190] Started disk monitoring
+2023-06-15 16:04:29,521 INFO    SystemMonitor:395974 [interfaces.py:start():190] Started gpu monitoring
+2023-06-15 16:04:29,522 INFO    SystemMonitor:395974 [interfaces.py:start():190] Started memory monitoring
+2023-06-15 16:04:29,523 INFO    SystemMonitor:395974 [interfaces.py:start():190] Started network monitoring
+2023-06-15 16:04:29,531 DEBUG   HandlerThread:395974 [system_info.py:probe():195] Probing system
+2023-06-15 16:04:29,537 DEBUG   HandlerThread:395974 [system_info.py:_probe_git():180] Probing git
+2023-06-15 16:04:29,549 DEBUG   HandlerThread:395974 [system_info.py:_probe_git():188] Probing git done
+2023-06-15 16:04:29,549 DEBUG   HandlerThread:395974 [system_info.py:probe():240] Probing system done
+2023-06-15 16:04:29,549 DEBUG   HandlerThread:395974 [system_monitor.py:probe():210] {'os': 'Linux-5.4.0-139-generic-x86_64-with-glibc2.10', 'python': '3.8.0', 'heartbeatAt': '2023-06-15T08:04:29.531598', 'startedAt': '2023-06-15T08:04:26.661955', 'docker': None, 'cuda': '11.0.228', 'args': ('--use-wandb',), 'state': 'running', 'program': 'train_nn.py', 'codePath': '5p2v/train_nn.py', 'git': {'remote': 'git@github.com:Lagooon/learning_minimal.git', 'commit': 'fbee9b08bf8f932f43566e58fccf18b0cfb8cf41'}, 'email': None, 'root': '/home/ubuntu/learning_minimal', 'host': 'VM-0-8-ubuntu', 'username': 'ubuntu', 'executable': '/home/ubuntu/anaconda3/bin/python', 'cpu_count': 4, 'cpu_count_logical': 4, 'cpu_freq': {'current': 2099.996, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2099.996, 'min': 0.0, 'max': 0.0}, {'current': 2099.996, 'min': 0.0, 'max': 0.0}, {'current': 2099.996, 'min': 0.0, 'max': 0.0}, {'current': 2099.996, 'min': 0.0, 'max': 0.0}], 'disk': {'total': 147.5437126159668, 'used': 60.16883087158203}, 'gpu': 'Tesla P4', 'gpu_count': 1, 'gpu_devices': [{'name': 'Tesla P4', 'memory_total': 7981694976}], 'memory': {'total': 18.797569274902344}}
+2023-06-15 16:04:29,549 INFO    HandlerThread:395974 [system_monitor.py:probe():211] Finished collecting system info
+2023-06-15 16:04:29,549 INFO    HandlerThread:395974 [system_monitor.py:probe():214] Publishing system info
+2023-06-15 16:04:29,549 DEBUG   HandlerThread:395974 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-06-15 16:04:29,549 DEBUG   HandlerThread:395974 [system_info.py:_save_pip():67] Saving pip packages done
+2023-06-15 16:04:29,550 DEBUG   HandlerThread:395974 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2023-06-15 16:04:29,580 DEBUG   HandlerThread:395974 [system_info.py:_save_conda():86] Saving conda packages done
+2023-06-15 16:04:29,582 INFO    HandlerThread:395974 [system_monitor.py:probe():216] Finished publishing system info
+2023-06-15 16:04:29,587 DEBUG   SenderThread:395974 [sender.py:send():375] send: files
+2023-06-15 16:04:29,587 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-06-15 16:04:29,598 DEBUG   SenderThread:395974 [sender.py:send():375] send: telemetry
+2023-06-15 16:04:29,599 DEBUG   SenderThread:395974 [sender.py:send():375] send: telemetry
+2023-06-15 16:04:29,600 DEBUG   SenderThread:395974 [sender.py:send():375] send: run
+2023-06-15 16:04:29,612 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:04:30,091 INFO    SenderThread:395974 [sender.py:send_run():1002] updated run: 7rntra4j
+2023-06-15 16:04:30,092 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:04:30,507 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/config.yaml
+2023-06-15 16:04:30,507 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_created():278] file/dir created: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:04:30,507 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_created():278] file/dir created: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/conda-environment.yaml
+2023-06-15 16:04:30,508 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_created():278] file/dir created: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/requirements.txt
+2023-06-15 16:04:30,508 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_created():278] file/dir created: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-metadata.json
+2023-06-15 16:04:31,020 INFO    wandb-upload_0:395974 [upload_job.py:push():137] Uploaded file /tmp/tmpwuxl4084wandb/x4f1lnlb-wandb-metadata.json
+2023-06-15 16:04:32,365 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:04:32,508 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:04:32,813 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:04:34,137 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:04:36,509 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:04:37,390 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:04:37,392 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:04:37,393 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:04:37,393 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:04:37,393 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:04:37,510 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:04:38,706 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:04:40,511 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:04:41,803 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:04:41,804 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:04:41,804 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:04:41,805 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:04:42,512 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:04:42,805 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:04:43,199 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:04:44,513 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:04:44,598 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:04:44,599 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:04:46,215 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:04:46,216 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:04:46,216 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:04:46,217 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:04:46,514 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:04:47,581 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:04:48,515 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:04:48,584 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:04:50,683 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:04:50,685 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:04:50,685 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:04:50,685 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:04:51,516 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:04:51,981 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:04:53,984 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:04:54,518 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:04:54,954 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:04:54,956 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:04:54,956 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:04:54,959 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:04:55,518 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:04:56,321 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:04:58,520 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:04:59,329 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:04:59,585 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:04:59,594 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:04:59,594 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:04:59,597 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:04:59,599 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:04:59,600 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:05:00,521 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:05:00,522 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/config.yaml
+2023-06-15 16:05:00,979 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:02,522 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:05:04,321 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:04,322 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:05:04,323 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:05:04,323 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:05:04,523 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:05:05,324 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:05:05,694 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:08,525 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:05:08,885 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:08,886 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:05:08,887 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:05:08,887 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:05:09,525 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:05:10,147 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:11,149 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:05:12,526 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:05:13,235 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:13,236 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:05:13,237 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:05:13,239 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:05:13,527 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:05:14,549 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:14,612 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:05:14,613 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:05:16,528 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:05:16,850 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:05:17,529 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:17,530 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:05:17,530 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:05:17,533 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:05:18,529 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:05:18,897 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:20,530 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:05:21,905 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:05:22,045 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:22,047 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:05:22,047 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:05:22,047 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:05:22,530 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:05:23,280 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:24,531 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:05:27,281 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:05:27,376 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:27,378 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:05:27,378 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:05:27,378 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:05:27,532 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:05:28,731 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:29,523 DEBUG   SystemMonitor:395974 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-06-15 16:05:29,525 DEBUG   SenderThread:395974 [sender.py:send():375] send: stats
+2023-06-15 16:05:29,604 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:05:29,605 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:05:30,533 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:05:32,187 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:32,188 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:05:32,189 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:05:32,189 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:05:32,534 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:05:33,190 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:05:33,478 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:34,544 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:05:36,760 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:36,761 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:05:36,762 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:05:36,762 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:05:37,546 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:05:38,077 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:39,079 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:05:40,547 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:05:41,046 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:41,048 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:05:41,048 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:05:41,048 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:05:41,548 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:05:42,288 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:44,293 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:05:44,549 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:05:44,604 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:05:44,605 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:05:45,292 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:45,293 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:05:45,293 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:05:45,294 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:05:45,549 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:05:46,584 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:48,551 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:05:49,585 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:05:49,676 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:49,677 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:05:49,678 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:05:49,678 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:05:50,552 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:05:50,969 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:52,553 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:05:54,024 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:54,025 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:05:54,026 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:05:54,027 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:05:54,554 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:05:55,027 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:05:55,315 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:56,556 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:05:58,357 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:58,358 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:05:58,358 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:05:58,359 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:05:58,557 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:05:59,526 DEBUG   SenderThread:395974 [sender.py:send():375] send: stats
+2023-06-15 16:05:59,597 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:05:59,632 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:05:59,632 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:06:00,557 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:06:00,876 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:06:02,899 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:02,901 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:06:02,901 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:06:02,901 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:06:03,559 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:06:04,197 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:06,202 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:06:06,560 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:06:07,231 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:07,232 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:06:07,232 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:06:07,233 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:06:07,561 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:06:08,589 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:10,562 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:06:11,590 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:06:11,806 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:11,808 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:06:11,808 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:06:11,809 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:06:12,564 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:06:13,191 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:14,565 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:06:14,607 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:06:14,607 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:06:16,330 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:16,331 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:06:16,332 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:06:16,334 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:06:16,565 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:06:17,335 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:06:17,578 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:18,566 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:06:20,790 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:20,791 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:06:20,791 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:06:20,792 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:06:21,567 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:06:22,088 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:23,090 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:06:24,569 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:06:25,098 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:25,100 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:06:25,100 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:06:25,101 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:06:25,569 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:06:26,396 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:28,398 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:06:28,571 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:06:29,471 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:29,472 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:06:29,473 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:06:29,473 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:06:29,527 DEBUG   SenderThread:395974 [sender.py:send():375] send: stats
+2023-06-15 16:06:29,571 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:06:29,607 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:06:29,607 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:06:30,781 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:32,572 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:06:33,734 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:33,735 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:06:33,736 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:06:33,736 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:06:33,737 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:06:34,574 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:06:35,039 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:36,575 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:06:38,322 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:38,323 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:06:38,323 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:06:38,326 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:06:38,576 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:06:39,327 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:06:39,618 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:40,577 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:06:42,744 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:42,746 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:06:42,746 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:06:42,747 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:06:43,578 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:06:44,047 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:44,607 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:06:44,608 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:06:44,608 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:06:46,580 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:06:47,270 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:47,271 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:06:47,271 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:06:47,272 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:06:47,580 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:06:48,568 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:50,570 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:06:50,582 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:06:51,758 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:51,759 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:06:51,759 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:06:51,760 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:06:52,583 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:06:53,013 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:54,583 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:06:56,015 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:56,017 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:06:56,017 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:06:56,017 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:06:56,018 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:06:56,584 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:06:57,315 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:06:58,585 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:06:59,528 DEBUG   SenderThread:395974 [sender.py:send():375] send: stats
+2023-06-15 16:06:59,608 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:06:59,608 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:07:00,767 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:00,769 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:07:00,769 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:07:00,772 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:07:01,586 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:07:01,772 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:07:02,113 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:04,587 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:07:05,293 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:05,294 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:07:05,294 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:07:05,295 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:07:05,588 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:07:06,595 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:07,598 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:07:08,589 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:07:09,601 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:09,603 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:07:09,603 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:07:09,603 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:07:10,590 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:07:10,849 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:12,591 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:07:12,851 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:07:13,927 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:13,928 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:07:13,928 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:07:13,929 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:07:14,592 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:07:14,607 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:07:14,608 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:07:15,300 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:16,593 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:07:18,301 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:07:18,370 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:18,371 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:07:18,371 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:07:18,372 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:07:18,594 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:07:19,747 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:20,594 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:07:22,994 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:22,995 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:07:22,996 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:07:22,999 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:07:23,596 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:07:24,000 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:07:24,359 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:26,597 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:07:27,490 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:27,491 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:07:27,492 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:07:27,492 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:07:27,597 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:07:28,731 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:29,529 DEBUG   SenderThread:395974 [sender.py:send():375] send: stats
+2023-06-15 16:07:29,530 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:07:29,608 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:07:29,608 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:07:30,599 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:07:31,983 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:31,984 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:07:31,984 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:07:31,985 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:07:32,600 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:07:33,281 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:34,601 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:07:35,283 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:07:36,373 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:36,375 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:07:36,375 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:07:36,375 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:07:36,602 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:07:37,744 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:38,603 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:07:40,749 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:07:40,887 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:40,891 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:07:40,892 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:07:40,892 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:07:41,605 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:07:42,265 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:44,606 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:07:44,608 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:07:44,609 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:07:45,416 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:45,417 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:07:45,417 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:07:45,418 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:07:45,606 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:07:46,418 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:07:46,722 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:48,608 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:07:49,962 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:49,963 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:07:49,964 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:07:49,964 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:07:50,611 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:07:51,321 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:52,324 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:07:52,612 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:07:54,429 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:54,430 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:07:54,431 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:07:54,433 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:07:54,613 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:07:55,731 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:56,614 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:07:57,733 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:07:58,865 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:07:58,866 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:07:58,866 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:07:58,867 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:07:59,529 DEBUG   SenderThread:395974 [sender.py:send():375] send: stats
+2023-06-15 16:07:59,608 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:07:59,608 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:07:59,615 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:08:00,290 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:02,617 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:08:03,293 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:08:03,527 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:03,529 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:08:03,529 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:08:03,529 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:08:03,618 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:08:04,827 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:06,619 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:08:07,881 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:07,882 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:08:07,882 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:08:07,883 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:08:08,620 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:08:08,883 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:08:09,190 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:10,621 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:08:12,177 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:12,178 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:08:12,178 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:08:12,179 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:08:12,621 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:08:13,483 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:14,484 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:08:14,608 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:08:14,609 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:08:14,622 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:08:16,612 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:16,613 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:08:16,614 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:08:16,616 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:08:16,623 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:08:17,917 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:18,624 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:08:19,918 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:08:21,035 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:21,036 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:08:21,037 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:08:21,037 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:08:21,625 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:08:22,276 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:24,627 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:08:25,278 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:08:25,453 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:25,454 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:08:25,454 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:08:25,455 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:08:25,628 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:08:26,769 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:28,630 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:08:29,530 DEBUG   SenderThread:395974 [sender.py:send():375] send: stats
+2023-06-15 16:08:29,608 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:08:29,610 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:08:30,048 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:30,049 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:08:30,049 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:08:30,049 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:08:30,631 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:08:31,050 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:08:31,439 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:32,631 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:08:34,337 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:34,338 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:08:34,339 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:08:34,339 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:08:34,632 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:08:35,649 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:36,633 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:08:36,650 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:08:39,097 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:39,098 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:08:39,098 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:08:39,101 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:08:39,635 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:08:40,344 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:42,349 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:08:42,637 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:08:43,324 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:43,326 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:08:43,326 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:08:43,327 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:08:43,637 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:08:44,608 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:08:44,609 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:08:44,655 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:46,638 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:08:47,844 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:08:47,917 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:47,918 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:08:47,919 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:08:47,919 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:08:48,639 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:08:49,225 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:50,640 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:08:52,174 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:52,176 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:08:52,176 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:08:52,177 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:08:52,641 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:08:53,178 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:08:53,456 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:54,642 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:08:56,489 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:56,490 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:08:56,491 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:08:56,491 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:08:56,643 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:08:57,796 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:08:58,644 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:08:58,798 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:08:59,531 DEBUG   SenderThread:395974 [sender.py:send():375] send: stats
+2023-06-15 16:08:59,610 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:08:59,611 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:09:01,071 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:01,072 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:09:01,073 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:09:01,075 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:09:01,645 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:09:02,391 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:04,397 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:09:04,646 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:09:05,612 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:05,613 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:09:05,613 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:09:05,614 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:09:05,647 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:09:06,910 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:08,648 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:09:09,912 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:09:10,035 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:10,037 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:09:10,037 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:09:10,037 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:09:10,649 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:09:11,340 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:12,650 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:09:14,501 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:14,502 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:09:14,503 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:09:14,503 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:09:14,609 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:09:14,609 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:09:14,651 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:09:15,804 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:09:15,807 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:16,652 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:09:19,061 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:19,063 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:09:19,063 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:09:19,063 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:09:19,653 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:09:20,435 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:21,435 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:09:22,655 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:09:23,522 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:23,523 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:09:23,524 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:09:23,524 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:09:23,656 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:09:24,837 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:26,657 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:09:26,839 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:09:27,877 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:27,878 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:09:27,879 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:09:27,879 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:09:28,658 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:09:29,142 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:29,532 DEBUG   SenderThread:395974 [sender.py:send():375] send: stats
+2023-06-15 16:09:29,610 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:09:29,610 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:09:30,659 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:09:31,841 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:09:32,282 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:32,283 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:09:32,283 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:09:32,284 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:09:32,660 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:09:33,581 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:34,661 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:09:36,699 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:36,700 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:09:36,701 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:09:36,701 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:09:37,662 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:09:37,702 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:09:38,068 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:38,663 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:09:41,118 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:41,119 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:09:41,120 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:09:41,120 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:09:41,664 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:09:42,434 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:43,436 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:09:44,610 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:09:44,610 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:09:44,666 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:09:45,655 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:45,656 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:09:45,656 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:09:45,657 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:09:45,666 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:09:46,967 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:48,667 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:09:48,971 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:09:50,184 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:50,186 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:09:50,186 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:09:50,187 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:09:50,668 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:09:51,553 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:52,669 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:09:54,556 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:09:54,591 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:54,592 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:09:54,592 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:09:54,593 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:09:54,671 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:09:55,974 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:56,671 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:09:59,222 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:09:59,223 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:09:59,224 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:09:59,224 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:09:59,533 DEBUG   SenderThread:395974 [sender.py:send():375] send: stats
+2023-06-15 16:09:59,608 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:09:59,610 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:09:59,610 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:09:59,673 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:10:00,583 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:10:02,680 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:10:03,865 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:10:03,866 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:10:03,867 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:10:03,867 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:10:04,681 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:10:04,868 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:10:05,165 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:10:06,682 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:10:08,169 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:10:08,170 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:10:08,171 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:10:08,171 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:10:08,683 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:10:09,481 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:10:10,483 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:10:10,685 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:10:12,585 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:10:12,586 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:10:12,587 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:10:12,588 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:10:12,686 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:10:13,886 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:10:14,610 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-15 16:10:14,610 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: stop_status
+2023-06-15 16:10:14,687 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:10:15,857 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:10:17,028 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:10:17,029 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:10:17,029 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:10:17,030 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:10:17,688 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:10:18,395 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:10:20,690 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:10:21,399 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:10:21,498 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:10:21,499 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:10:21,500 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:10:21,500 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:10:21,690 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:10:22,747 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:10:24,691 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:10:25,852 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:10:25,854 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:10:25,854 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:10:25,855 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:10:26,692 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:10:26,855 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:10:27,159 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-15 16:10:27,161 DEBUG   SenderThread:395974 [sender.py:send():375] send: exit
+2023-06-15 16:10:27,161 INFO    SenderThread:395974 [sender.py:send_exit():598] handling exit code: 0
+2023-06-15 16:10:27,161 INFO    SenderThread:395974 [sender.py:send_exit():600] handling runtime: 357
+2023-06-15 16:10:27,161 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:10:27,162 INFO    SenderThread:395974 [sender.py:send_exit():606] send defer
+2023-06-15 16:10:27,162 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: defer
+2023-06-15 16:10:27,162 INFO    HandlerThread:395974 [handler.py:handle_request_defer():170] handle defer: 0
+2023-06-15 16:10:27,163 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: defer
+2023-06-15 16:10:27,163 INFO    SenderThread:395974 [sender.py:send_request_defer():622] handle sender defer: 0
+2023-06-15 16:10:27,163 INFO    SenderThread:395974 [sender.py:transition_state():626] send defer: 1
+2023-06-15 16:10:27,163 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: defer
+2023-06-15 16:10:27,163 INFO    HandlerThread:395974 [handler.py:handle_request_defer():170] handle defer: 1
+2023-06-15 16:10:27,164 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: defer
+2023-06-15 16:10:27,164 INFO    SenderThread:395974 [sender.py:send_request_defer():622] handle sender defer: 1
+2023-06-15 16:10:27,164 INFO    SenderThread:395974 [sender.py:transition_state():626] send defer: 2
+2023-06-15 16:10:27,164 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: defer
+2023-06-15 16:10:27,164 INFO    HandlerThread:395974 [handler.py:handle_request_defer():170] handle defer: 2
+2023-06-15 16:10:27,164 INFO    HandlerThread:395974 [system_monitor.py:finish():190] Stopping system monitor
+2023-06-15 16:10:27,164 DEBUG   SystemMonitor:395974 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-06-15 16:10:27,164 DEBUG   SystemMonitor:395974 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-06-15 16:10:27,164 INFO    HandlerThread:395974 [interfaces.py:finish():202] Joined cpu monitor
+2023-06-15 16:10:27,165 INFO    HandlerThread:395974 [interfaces.py:finish():202] Joined disk monitor
+2023-06-15 16:10:27,186 INFO    HandlerThread:395974 [interfaces.py:finish():202] Joined gpu monitor
+2023-06-15 16:10:27,186 INFO    HandlerThread:395974 [interfaces.py:finish():202] Joined memory monitor
+2023-06-15 16:10:27,186 INFO    HandlerThread:395974 [interfaces.py:finish():202] Joined network monitor
+2023-06-15 16:10:27,187 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: defer
+2023-06-15 16:10:27,187 INFO    SenderThread:395974 [sender.py:send_request_defer():622] handle sender defer: 2
+2023-06-15 16:10:27,187 INFO    SenderThread:395974 [sender.py:transition_state():626] send defer: 3
+2023-06-15 16:10:27,187 DEBUG   SenderThread:395974 [sender.py:send():375] send: stats
+2023-06-15 16:10:27,188 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: defer
+2023-06-15 16:10:27,188 INFO    HandlerThread:395974 [handler.py:handle_request_defer():170] handle defer: 3
+2023-06-15 16:10:27,188 DEBUG   SenderThread:395974 [sender.py:send():375] send: history
+2023-06-15 16:10:27,189 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: summary_record
+2023-06-15 16:10:27,189 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:10:27,189 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: defer
+2023-06-15 16:10:27,189 INFO    SenderThread:395974 [sender.py:send_request_defer():622] handle sender defer: 3
+2023-06-15 16:10:27,189 INFO    SenderThread:395974 [sender.py:transition_state():626] send defer: 4
+2023-06-15 16:10:27,190 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: defer
+2023-06-15 16:10:27,190 INFO    HandlerThread:395974 [handler.py:handle_request_defer():170] handle defer: 4
+2023-06-15 16:10:27,190 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: defer
+2023-06-15 16:10:27,190 INFO    SenderThread:395974 [sender.py:send_request_defer():622] handle sender defer: 4
+2023-06-15 16:10:27,190 INFO    SenderThread:395974 [sender.py:transition_state():626] send defer: 5
+2023-06-15 16:10:27,190 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: defer
+2023-06-15 16:10:27,190 INFO    HandlerThread:395974 [handler.py:handle_request_defer():170] handle defer: 5
+2023-06-15 16:10:27,191 DEBUG   SenderThread:395974 [sender.py:send():375] send: summary
+2023-06-15 16:10:27,191 INFO    SenderThread:395974 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-15 16:10:27,191 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: defer
+2023-06-15 16:10:27,192 INFO    SenderThread:395974 [sender.py:send_request_defer():622] handle sender defer: 5
+2023-06-15 16:10:27,192 INFO    SenderThread:395974 [sender.py:transition_state():626] send defer: 6
+2023-06-15 16:10:27,192 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: defer
+2023-06-15 16:10:27,192 INFO    HandlerThread:395974 [handler.py:handle_request_defer():170] handle defer: 6
+2023-06-15 16:10:27,192 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: defer
+2023-06-15 16:10:27,192 INFO    SenderThread:395974 [sender.py:send_request_defer():622] handle sender defer: 6
+2023-06-15 16:10:27,192 INFO    SenderThread:395974 [sender.py:transition_state():626] send defer: 7
+2023-06-15 16:10:27,192 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:10:27,193 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: defer
+2023-06-15 16:10:27,193 INFO    HandlerThread:395974 [handler.py:handle_request_defer():170] handle defer: 7
+2023-06-15 16:10:27,193 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: defer
+2023-06-15 16:10:27,193 INFO    SenderThread:395974 [sender.py:send_request_defer():622] handle sender defer: 7
+2023-06-15 16:10:27,692 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:10:28,161 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: poll_exit
+2023-06-15 16:10:28,693 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:10:30,582 INFO    SenderThread:395974 [sender.py:transition_state():626] send defer: 8
+2023-06-15 16:10:30,582 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: poll_exit
+2023-06-15 16:10:30,583 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: defer
+2023-06-15 16:10:30,583 INFO    HandlerThread:395974 [handler.py:handle_request_defer():170] handle defer: 8
+2023-06-15 16:10:30,583 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: defer
+2023-06-15 16:10:30,583 INFO    SenderThread:395974 [sender.py:send_request_defer():622] handle sender defer: 8
+2023-06-15 16:10:30,591 INFO    SenderThread:395974 [sender.py:transition_state():626] send defer: 9
+2023-06-15 16:10:30,592 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: defer
+2023-06-15 16:10:30,592 DEBUG   SenderThread:395974 [sender.py:send():375] send: artifact
+2023-06-15 16:10:30,592 INFO    HandlerThread:395974 [handler.py:handle_request_defer():170] handle defer: 9
+2023-06-15 16:10:30,694 INFO    Thread-12 :395974 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:10:32,935 INFO    wandb-upload_0:395974 [upload_job.py:push():95] Uploaded file /home/ubuntu/.local/share/wandb/artifacts/staging/tmpnhiz9oqf
+2023-06-15 16:10:33,015 INFO    wandb-upload_1:395974 [upload_job.py:push():95] Uploaded file /home/ubuntu/.local/share/wandb/artifacts/staging/tmp_0l8fy5_
+2023-06-15 16:10:33,163 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: keepalive
+2023-06-15 16:10:34,909 INFO    SenderThread:395974 [sender.py:send_artifact():1474] sent artifact job-git_github.com_Lagooon_learning_minimal.git_5p2v_train_nn.py - {'id': 'QXJ0aWZhY3Q6NDg4MzA3OTE1', 'digest': '17f1a6f7be13e7af87d513822a747f4a', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjc2ODU3NDY4', 'latestArtifact': None}, 'version': 'latest'}
+2023-06-15 16:10:34,910 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: defer
+2023-06-15 16:10:34,910 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:10:34,910 INFO    SenderThread:395974 [sender.py:send_request_defer():622] handle sender defer: 9
+2023-06-15 16:10:34,910 INFO    SenderThread:395974 [dir_watcher.py:finish():365] shutting down directory watcher
+2023-06-15 16:10:35,695 INFO    SenderThread:395974 [dir_watcher.py:finish():395] scan: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files
+2023-06-15 16:10:35,695 INFO    SenderThread:395974 [dir_watcher.py:finish():409] scan save: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json wandb-summary.json
+2023-06-15 16:10:35,695 INFO    SenderThread:395974 [dir_watcher.py:finish():409] scan save: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log output.log
+2023-06-15 16:10:35,696 INFO    SenderThread:395974 [dir_watcher.py:finish():409] scan save: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/requirements.txt requirements.txt
+2023-06-15 16:10:35,699 INFO    SenderThread:395974 [dir_watcher.py:finish():409] scan save: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/config.yaml config.yaml
+2023-06-15 16:10:35,705 INFO    SenderThread:395974 [dir_watcher.py:finish():409] scan save: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/conda-environment.yaml conda-environment.yaml
+2023-06-15 16:10:35,708 INFO    SenderThread:395974 [dir_watcher.py:finish():409] scan save: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-metadata.json wandb-metadata.json
+2023-06-15 16:10:35,708 INFO    SenderThread:395974 [sender.py:transition_state():626] send defer: 10
+2023-06-15 16:10:35,709 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: defer
+2023-06-15 16:10:35,709 INFO    HandlerThread:395974 [handler.py:handle_request_defer():170] handle defer: 10
+2023-06-15 16:10:35,709 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: defer
+2023-06-15 16:10:35,709 INFO    SenderThread:395974 [sender.py:send_request_defer():622] handle sender defer: 10
+2023-06-15 16:10:35,709 INFO    SenderThread:395974 [file_pusher.py:finish():167] shutting down file pusher
+2023-06-15 16:10:36,321 INFO    wandb-upload_0:395974 [upload_job.py:push():137] Uploaded file /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/wandb-summary.json
+2023-06-15 16:10:36,557 INFO    wandb-upload_1:395974 [upload_job.py:push():137] Uploaded file /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/output.log
+2023-06-15 16:10:36,752 INFO    wandb-upload_2:395974 [upload_job.py:push():137] Uploaded file /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/requirements.txt
+2023-06-15 16:10:36,770 INFO    wandb-upload_3:395974 [upload_job.py:push():137] Uploaded file /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/files/config.yaml
+2023-06-15 16:10:36,971 INFO    Thread-11 :395974 [sender.py:transition_state():626] send defer: 11
+2023-06-15 16:10:36,971 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: defer
+2023-06-15 16:10:36,971 INFO    HandlerThread:395974 [handler.py:handle_request_defer():170] handle defer: 11
+2023-06-15 16:10:36,972 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: defer
+2023-06-15 16:10:36,972 INFO    SenderThread:395974 [sender.py:send_request_defer():622] handle sender defer: 11
+2023-06-15 16:10:36,972 INFO    SenderThread:395974 [file_pusher.py:join():172] waiting for file pusher
+2023-06-15 16:10:36,972 INFO    SenderThread:395974 [sender.py:transition_state():626] send defer: 12
+2023-06-15 16:10:36,972 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: defer
+2023-06-15 16:10:36,972 INFO    HandlerThread:395974 [handler.py:handle_request_defer():170] handle defer: 12
+2023-06-15 16:10:36,972 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: defer
+2023-06-15 16:10:36,973 INFO    SenderThread:395974 [sender.py:send_request_defer():622] handle sender defer: 12
+2023-06-15 16:10:38,164 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: keepalive
+2023-06-15 16:10:43,166 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: keepalive
+2023-06-15 16:10:45,127 INFO    SenderThread:395974 [sender.py:transition_state():626] send defer: 13
+2023-06-15 16:10:45,128 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: defer
+2023-06-15 16:10:45,128 INFO    HandlerThread:395974 [handler.py:handle_request_defer():170] handle defer: 13
+2023-06-15 16:10:45,128 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: status_report
+2023-06-15 16:10:45,128 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: defer
+2023-06-15 16:10:45,129 INFO    SenderThread:395974 [sender.py:send_request_defer():622] handle sender defer: 13
+2023-06-15 16:10:45,129 INFO    SenderThread:395974 [sender.py:transition_state():626] send defer: 14
+2023-06-15 16:10:45,129 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: defer
+2023-06-15 16:10:45,129 INFO    HandlerThread:395974 [handler.py:handle_request_defer():170] handle defer: 14
+2023-06-15 16:10:45,130 DEBUG   SenderThread:395974 [sender.py:send():375] send: final
+2023-06-15 16:10:45,130 DEBUG   SenderThread:395974 [sender.py:send():375] send: footer
+2023-06-15 16:10:45,130 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: defer
+2023-06-15 16:10:45,130 INFO    SenderThread:395974 [sender.py:send_request_defer():622] handle sender defer: 14
+2023-06-15 16:10:45,130 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: poll_exit
+2023-06-15 16:10:45,131 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: poll_exit
+2023-06-15 16:10:45,131 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: server_info
+2023-06-15 16:10:45,132 DEBUG   SenderThread:395974 [sender.py:send_request():402] send_request: server_info
+2023-06-15 16:10:45,134 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: get_summary
+2023-06-15 16:10:45,135 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: sampled_history
+2023-06-15 16:10:45,647 INFO    MainThread:395974 [wandb_run.py:_footer_history_summary_info():3469] rendering history
+2023-06-15 16:10:45,648 INFO    MainThread:395974 [wandb_run.py:_footer_history_summary_info():3501] rendering summary
+2023-06-15 16:10:45,648 INFO    MainThread:395974 [wandb_run.py:_footer_sync_info():3428] logging synced files
+2023-06-15 16:10:45,649 DEBUG   HandlerThread:395974 [handler.py:handle_request():144] handle_request: shutdown
+2023-06-15 16:10:45,649 INFO    HandlerThread:395974 [handler.py:finish():845] shutting down handler
+2023-06-15 16:10:46,132 INFO    WriterThread:395974 [datastore.py:close():298] close: /home/ubuntu/learning_minimal/5p2v/wandb/run-20230615_160426-7rntra4j/run-7rntra4j.wandb
+2023-06-15 16:10:46,647 INFO    SenderThread:395974 [sender.py:finish():1550] shutting down sender
+2023-06-15 16:10:46,648 INFO    SenderThread:395974 [file_pusher.py:finish():167] shutting down file pusher
+2023-06-15 16:10:46,648 INFO    SenderThread:395974 [file_pusher.py:join():172] waiting for file pusher
