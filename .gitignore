@@ -3,3 +3,5 @@ BIN/
 data/
 CMakeFiles/
 SyntheticData/
+wandb/
+models/
