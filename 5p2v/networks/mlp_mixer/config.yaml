@@ -1,0 +1,4 @@
+wandb_group: 'mlp_mixer'
+model: 'mlp_mixer'
+lr: 1.0e-2
+weight_decay: 1.0e-3

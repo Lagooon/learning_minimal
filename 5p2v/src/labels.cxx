@@ -205,28 +205,26 @@ int main(int argc, char **argv)
 				if(diff <= settings.corr_thresh_)
 				{
 					//update the statistics
-					succ += 1;
 					covered = 1;
 
 					//store the label (and the transformed problem)
-					lf << (j+1) << "\n";
-					for(int a=0;a<20;++a)
-						xf << problem[a] << " ";
-					xf << "\n";
+					lf << 1 << " ";
 				}
+				else lf << 0 << " ";
 				
 			}
+			else lf << 0 << " ";
 			
 		}
 
 		//if the problem is not covered, store it with zero (TRASH) label
-		if(!covered)
-		{
-			lf << 0 << "\n";
-			for(int a=0;a<20;++a)
-				xf << problem[a] << " ";
-			xf << "\n";
-		}
+		for(int a=0;a<20;++a)
+			xf << problem[a] << " ";
+		xf << "\n";
+		if(covered)
+			succ += 1;
+		lf << "\n";
+		all += 1;
 	}
 
 	lf.close();
