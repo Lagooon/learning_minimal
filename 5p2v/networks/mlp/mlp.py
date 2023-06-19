@@ -8,7 +8,7 @@ from torch.utils.data import Dataset
 from torch.utils.data import TensorDataset
 
 class Net(nn.Module):
-	def __init__(self, anchors, num_layers = 6, hidden_dim = 100):
+	def __init__(self, num_anchors, num_layers = 6, hidden_dim = 100):
 		super(Net, self).__init__()
 
 		layers = []
@@ -23,7 +23,7 @@ class Net(nn.Module):
 			input_dim = hidden_dim
 		self.MLP = nn.Sequential(*layers)
 		self.drop = nn.Dropout(0.5)
-		self.fc = nn.Linear(100,anchors)
+		self.fc = nn.Linear(hidden_dim, num_anchors)
 
 	def forward(self, x):
 		x = self.MLP(x)

@@ -1,4 +1,7 @@
 wandb_group: 'mlp'
 model: 'mlp'
-lr: 1.0e-2
-weight_decay: 0
+lr: 1.0e-4
+weight_decay: 1.0e-4
+num_layers: 6
+hidden_dim: 200
+optimizer: "adam"

@@ -29,19 +29,19 @@ def FeedForward(dim, expansion_factor = 4, dropout = 0., dense = nn.Linear):
 	)
 
 # batch_size * (input + all anchors) * 20
-def Net(num_classes, depth = 12, dim = 512, expansion_factor = 4, expansion_factor_token = 0.5, dropout = 0.):
-	channels = num_classes + 1
+def Net(num_anchors, num_layers = 12, hidden_dim = 512, expansion_factor = 4, expansion_factor_token = 0.5, dropout = 0.):
+	channels = num_anchors + 1
 	chan_first, chan_last = partial(nn.Conv1d, kernel_size = 1), nn.Linear
 
 	return nn.Sequential(
-		nn.Linear(20, dim),
+		nn.Linear(20, hidden_dim),
 		*[nn.Sequential(
-			PreNormResidual(dim, FeedForward(channels, expansion_factor, dropout, chan_first)),
-			PreNormResidual(dim, FeedForward(dim, expansion_factor_token, dropout, chan_last))
-		) for _ in range(depth)],
-		nn.LayerNorm(dim),
+			PreNormResidual(hidden_dim, FeedForward(channels, expansion_factor, dropout, chan_first)),
+			PreNormResidual(hidden_dim, FeedForward(hidden_dim, expansion_factor_token, dropout, chan_last))
+		) for _ in range(num_layers)],
+		nn.LayerNorm(hidden_dim),
 		Reduce('b n c -> b c', 'mean'),
-		nn.Linear(dim, num_classes)
+		nn.Linear(hidden_dim, num_anchors)
 	)
 
 class Dataset(Dataset):
