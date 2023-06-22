@@ -3,5 +3,5 @@ model: 'mlp'
 lr: 1.0e-4
 weight_decay: 1.0e-4
 num_layers: 6
-hidden_dim: 200
+hidden_dim: 100
 optimizer: "adam"

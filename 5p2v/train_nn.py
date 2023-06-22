@@ -32,7 +32,7 @@ def get_args():
 	
 	parser.add_argument("--model", type=str, default="mlp")
 	parser.add_argument("--datafolder", type=str, default="MODEL")
-	parser.add_argument("--anchors", default=120, type=int)
+	parser.add_argument("--anchors", default=26, type=int)
 	#parser.add_argument("--early_stopping", action='store_true')
 	parser.add_argument("--seed", default=1, type=int)
 	parser.add_argument("--normalize", action='store_true')
@@ -62,11 +62,11 @@ def get_args():
 		distributed training; see https://pytorch.org/docs/stable/distributed.html""")
 	'''
 	return args
-
+'''
 def normalize(x, std, mean):
 	sz = x.shape[0]
-	return ((x.reshape(sz, -1, 2) - mean) / (std + 1e-8)).reshape(sz, -1)
-
+	return ((x.reshape(sz, -1, 2) - mean) / (std + 1e-10)).reshape(sz, -1)
+'''
 def train(args):
 
 	if args.use_wandb:
@@ -107,20 +107,21 @@ def train(args):
 	X_test_tensor = torch.Tensor(X_test)
 	y_test_tensor = torch.Tensor(Y_test)
 	anchors_tensor = torch.Tensor(anchors)
+	'''
 	if args.normalize:
 		std, mean = torch.std_mean(X_train_tensor.reshape(-1, 10, 2), dim=(0, 1))
 		X_train_tensor = normalize(X_train_tensor, std, mean)
 		X_test_tensor = normalize(X_test_tensor, std, mean)
 		anchors_tensor = normalize(anchors_tensor, std, mean)
-
+	'''
 	if args.model in ['mlp_mixer', "transformer"]:
 		Dataset = partial(Dataset, anchors = anchors_tensor[:, :20])
 	y_train_tensor = y_train_tensor / (torch.sum(y_train_tensor, dim=1, keepdim=True)+1e-10)
 	y_test_tensor = y_test_tensor / (torch.sum(y_test_tensor, dim=1, keepdim=True)+1e-10)
-	train_dataset = Dataset(X_train_tensor,y_train_tensor)
+	train_dataset = Dataset(X_train_tensor,y_train_tensor, args)
 	train_dl = torch.utils.data.DataLoader(train_dataset, batch_size=args.batch_size, shuffle = True, num_workers = 4)
-	test_dataset = Dataset(X_test_tensor,y_test_tensor)
-	test_dl = torch.utils.data.DataLoader(test_dataset, batch_size=args.batch_size, num_workers =4)
+	test_dataset = Dataset(X_test_tensor,y_test_tensor, args)
+	test_dl = torch.utils.data.DataLoader(test_dataset, batch_size=args.batch_size, num_workers = 4)
 	'''
 	a = np.zeros((27), dtype=np.int32)
 	for y in Y_train:
@@ -136,6 +137,7 @@ def train(args):
 		#print("Epoch "+str(epoch))
 		net.train()
 		losses = []
+		'''
 		for i, (X, Y) in enumerate(train_dl):
 			#if i%2000 == 0:
 			#	print(i)
@@ -148,20 +150,11 @@ def train(args):
 			loss.backward()
 			optimizer.step()
 			losses.append(loss.item())
-			'''
-			for i in net.children():
-				
-				if hasattr(i, 'weight'):
-
-					print(i)
-					print(i.weight.grad)
-					print(torch.norm(i.weight.grad))
-			'''
-
 		if args.use_wandb:  
 			wandb.log({"loss": np.mean(losses), 
 				"lr": optimizer.param_groups[0]['lr']}, step = epoch + 1)
 
+		'''
 		#validate
 		scheduler.step()
 		net.eval()
@@ -189,7 +182,7 @@ def train(args):
 		end = time.time()
 		t1 = end-start
 
-		print("epoch:", epoch+1, f"trainloss:{np.mean(losses):.4e}", f"evalloss:{np.mean(eval_losses):.4e}", "c1:", c1, "c2:", c2, "c", y_test_tensor.shape[0], "rate:", c1/y_test_tensor.shape[0])
+		print("epoch:", epoch+1, f"trainloss:{np.mean(losses):.4f}", f"evalloss:{np.mean(eval_losses):.4f}", "c1:", c1, "c2:", c2, "c", y_test_tensor.shape[0], "rate:", c1/y_test_tensor.shape[0])
 
 		if args.use_wandb:  
 			#wandb.log({"eval_acc": c1 / c2}, step = epoch + 1)
@@ -238,5 +231,8 @@ if __name__ == "__main__":
 		for k, v in config.items():
 			if f'--{k}' not in sys.argv[1:]:
 				setattr(args, k, v)
+	#std: tensor([0.1523, 0.2670]) mean: tensor([-0.0260,  0.0339])
+	setattr(args, 'std', torch.tensor([0.1523, 0.2670]))
+	setattr(args, 'mean', torch.tensor([-0.0260, 0.0339]))
 	print(args)
 	train(args)

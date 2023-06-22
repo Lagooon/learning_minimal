@@ -30,5 +30,29 @@ class Net(nn.Module):
 		#x = self.drop(x)
 		return self.fc(x)
 	
-def Dataset(X, Y):
-	return TensorDataset(X, Y)
+#def Dataset(X, Y):
+#	return TensorDataset(X, Y)
+
+def normalize(x, args):
+	if not args.normalize:
+		return x
+	if len(x.shape) == 1:
+		return ((x.reshape(-1, 2) - args.mean) / (args.std + 1e-10)).reshape(-1)
+	else:
+		c = x.shape[0]
+		return ((x.reshape(-1, 2) - args.mean) / (args.std + 1e-10)).reshape(c, -1)
+
+class Dataset(Dataset):
+	def __init__(self, X, Y, args):
+		super().__init__()
+		self.X = X
+		self.Y = Y
+		self.args = args
+		
+	def __len__(self):
+		return len(self.X)
+	
+	def __getitem__(self, index):
+		#print(self.X[index])
+		#print(normalize(self.X[index], self.args))
+		return normalize(self.X[index], self.args), self.Y[index]

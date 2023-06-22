@@ -6,6 +6,7 @@ from torch import nn
 from functools import partial
 from einops.layers.torch import Rearrange, Reduce
 from torch.utils.data import Dataset
+import networks
 
 pair = lambda x: x if isinstance(x, tuple) else (x, x)
 
@@ -45,14 +46,16 @@ def Net(num_anchors, num_layers = 12, hidden_dim = 512, expansion_factor = 4, ex
 	)
 
 class Dataset(Dataset):
-	def __init__(self, X, Y, anchors):
+	def __init__(self, X, Y, args, anchors):
 		super().__init__()
 		self.X = X
 		self.Y = Y
+		self.args = args
 		self.anchors = anchors
 		
 	def __len__(self):
 		return len(self.X)
 	
 	def __getitem__(self, index):
-		return torch.cat((self.X[index].unsqueeze(0), self.anchors), dim = 0), self.Y[index]
+		#print(networks.mlp.mlp.normalize(torch.cat((self.X[index].unsqueeze(0), self.anchors), dim = 0), self.args))
+		return networks.mlp.mlp.normalize(torch.cat((self.X[index].unsqueeze(0), self.anchors), dim = 0), self.args), self.Y[index]

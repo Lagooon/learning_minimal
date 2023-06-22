@@ -272,6 +272,7 @@ class Net(nn.Module):
 
 	# p is 1 and anchors are 0
 	def embed_positions(self, input):
+		return torch.zeros((input.shape[0], self.num_anchors+1, self.config.n_embed)).cuda()
 		bsz = input.shape[0]
 		pos = torch.cat((torch.ones((bsz, 1), dtype = torch.int), torch.zeros((bsz, self.num_anchors), dtype = torch.int)), dim = 1).cuda()
 		return self.embed_pos(pos)

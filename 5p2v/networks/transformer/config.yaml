@@ -1,8 +1,8 @@
 wandb_group: 'transformer'
 model: 'transformer'
-lr: 1.0e-3
+lr: 5.0e-4
 weight_decay: 1.0e-4
 num_layers: 6
 hidden_dim: 512
-num_epoch: 30
+num_epoch: 100
 optimizer: "adam"

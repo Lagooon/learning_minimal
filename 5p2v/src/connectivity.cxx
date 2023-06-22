@@ -202,7 +202,37 @@ int main(int argc, char **argv)
 					succ += 1;
 				}
 			}
-
+			/*
+			else
+				{	
+					std::cout << "Anchors: " << i << ", " << j << "\n";
+					std::ofstream faf;
+					faf.open("/home/ubuntu/learning_minimal/5p2v/qwq.txt");
+					Float pre_solution[20];
+					for(float pt=1;pt>=0;pt-=0.0001)
+					{
+						for(int a=0;a<20;a++)
+						{
+							params[20+a] = problems[j][a]*pt+problems[i][a]*(1-pt);
+						}
+						
+						Float cur_start[9];
+						for(int a=0;a<9;++a)
+							cur_start[a] = start[i][a];		
+						int status = track(settings, cur_start, params, solution, &num_steps);
+						Float diff = 0;
+						for(int a=0;a<9;a++)
+						{
+							Float cdiff = solution[a] - pre_solution[a];
+							diff = diff + cdiff * cdiff;
+							pre_solution[a] = solution[a];
+						}
+						if(pt<1)
+							faf << status <<" "<<diff<< "\n";
+					}
+					return 0;
+				}
+			*/
 			all+=1;
 		}
 	}

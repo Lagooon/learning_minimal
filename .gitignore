@@ -1,7 +1,12 @@
 bin/
 BIN/
-data/
 CMakeFiles/
 SyntheticData/
+SyntheticData2/
 wandb/
 models/
+data/
+nohup.out
+23M/
+26anchors/
+70anchors/
