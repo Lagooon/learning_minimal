@@ -137,7 +137,6 @@ def train(args):
 		#print("Epoch "+str(epoch))
 		net.train()
 		losses = []
-		'''
 		for i, (X, Y) in enumerate(train_dl):
 			#if i%2000 == 0:
 			#	print(i)
@@ -154,7 +153,6 @@ def train(args):
 			wandb.log({"loss": np.mean(losses), 
 				"lr": optimizer.param_groups[0]['lr']}, step = epoch + 1)
 
-		'''
 		#validate
 		scheduler.step()
 		net.eval()
