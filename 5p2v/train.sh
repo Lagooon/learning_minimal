@@ -83,6 +83,3 @@ done
 
 # 训练
 #python3 train_nn.py ./MODEL ./MODEL/trainParam.txt
-
-# 验证
-#./BIN/evaluate ./$DATA/test_data.txt ./MODEL/ ./MODEL/trainParam.txt

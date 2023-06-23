@@ -38,7 +38,7 @@ bool load_anchors(std::string data_file,
 
 	int n;
 	f >> n;
-	std::cout << n << " anchors\n";
+	//std::cout << n << " anchors\n";
 
 	problems = std::vector<std::vector<Float>>(n);
 	start = std::vector<std::vector<Float>>(n);
@@ -80,7 +80,7 @@ bool load_anchors(std::string data_file,
 	f.close();
 	return 1;
 }
-
+/*
 void load_NN(std::string model_dir, std::vector<std::vector<float>> &ws, std::vector<std::vector<float>> &bs, std::vector<std::vector<float>> &ps, std::vector<int> &a_, std::vector<int> &b_)
 {
 	std::ifstream fnn;
@@ -140,26 +140,28 @@ void load_NN(std::string model_dir, std::vector<std::vector<float>> &ws, std::ve
 	fnn.close();
 	
 }
-
+*/
 int main(int argc, char **argv)
 {
-	if(argc < 4)
+	if(argc < 5)
 	{
-		std::cout << "Run as:\n labels test_data model_folder trainParam\n where test_data is the file with problems on which the model will be tested, model_folder is the trained model of the solver, and trainParam is a file with settings\n";
+		std::cout << "Run as:\n test_data test_predict anchors_folder trainParam\n where test_data is the file with problems on which the model will be tested, model_folder is the trained model of the solver, and trainParam is a file with settings\n";
 		return 0;
 	}
 	std::string data_file(argv[1]);
-	std::cout << "Extracting data from file " << data_file << ".\n";
-	std::string model_folder(argv[2]);
-	std::cout << "Model folder " << model_folder << "\n";
-	std::string set_file(argv[3]);
-	std::cout << "Extracting settings from file " << set_file << ".\n";
+	//std::cout << "Extracting test data from file " << data_file << ".\n";
+	std::string predict_file(argv[2]);
+	//std::cout << "Extracting test data prediction from file " << predict_file << ".\n";
+	std::string model_folder(argv[3]);
+	//std::cout << "Anchors folder " << model_folder << "\n";
+	std::string set_file(argv[4]);
+	//std::cout << "Extracting settings from file " << set_file << ".\n";
 
 	track_settings settings;
 	//load the settings and store them to the track_settings structure (update to contain more settings)
 	bool succ_load = load_settings(set_file, settings);
 	if(!succ_load) return 0;
-	print_settings(settings);
+	//print_settings(settings);
 
 	//load the anchors
 	std::vector<std::vector<Float>> anchors;
@@ -170,6 +172,7 @@ int main(int argc, char **argv)
 	int m = anchors.size();
 
 	//load the NN
+	/*
 	std::vector<std::vector<float>> ws;
 	std::vector<std::vector<float>> bs;
 	std::vector<std::vector<float>> ps;
@@ -177,7 +180,7 @@ int main(int argc, char **argv)
 	std::vector<int> b_;
 	load_NN(model_folder, ws, bs, ps, a_, b_);
 	int layers = b_.size();
-
+	*/
 	//initialize the variables for the tracking
 	Float params[40];
 	static double solution[9];
@@ -196,17 +199,25 @@ int main(int argc, char **argv)
 	if(!f.good())
 	{
 		f.close();
-		std::cout << "Training data file not available\n";
+		std::cout << "Test data file not available\n";
+		return 0;
+	}
+	std::ifstream result;
+	result.open(predict_file);
+	if(!result.good())
+	{
+		result.close();
+		std::cout << "Prediction of test data file not available\n";
 		return 0;
 	}
 	int n;
-	f >> n;
-	std::cout << n << " problems\n";
+	result >> n;
+	//std::cout << n << " problems\n";
 
 	//load every problem, select the starting problem with the classifier, track HC to the loaded problem, and evaluate the result
 	for(int i=0;i<n;++i)
 	{
-		if(!(i%10000)) std::cout << i << "\n";
+		//if(!(i%10000)) std::cout << i << "\n";
 	
 		//load the problem
 		Float problem[20];
@@ -221,7 +232,11 @@ int main(int argc, char **argv)
 			problem[j] = u;
 		}
 
+		int p;
+		result >> p;
+
 		//load the depths
+		/*
 		for(int j=0;j<10;j++)
 		{
 			Float u;
@@ -229,7 +244,7 @@ int main(int argc, char **argv)
 
 			depths[j] = u;
 		}
-
+		
 		//SELECT THE INITIAL P-S PAIR
 		high_resolution_clock::time_point ta1 = high_resolution_clock::now();
 
@@ -238,6 +253,7 @@ int main(int argc, char **argv)
 			orig[a] = (float)problem[a];
 
 		//evaluate the MLP
+		
 		Eigen::Map<Eigen::VectorXf> input_n2(orig,20);
 		Eigen::VectorXf input_ = input_n2;
 		Eigen::VectorXf output_;
@@ -277,7 +293,7 @@ int main(int argc, char **argv)
 		high_resolution_clock::time_point ta2 = high_resolution_clock::now();
 		auto duration_a = duration_cast<microseconds>(ta2 - ta1).count();
 		total = total + duration_a;
-
+		*/
 		//copy the start problem
 		for(int a=0;a<20;a++)
 		{
@@ -299,9 +315,10 @@ int main(int argc, char **argv)
 		high_resolution_clock::time_point t2 = high_resolution_clock::now();
 		auto duration = duration_cast<microseconds>(t2 - t1).count();
 		total_track = total_track + duration;
-		total = total + duration;
+		//total = total + duration;
 
 		//evaluate the solution
+		/*
 		if(status == 2)
 		{
 			//compute the difference between the obtained and the expected solutions
@@ -318,15 +335,15 @@ int main(int argc, char **argv)
 			}
 			
 		}
-
+		*/
 	}
 	
 	
-	std::cout << "\n";
-	std::cout << "Time of tracking " << total_track << "µs, " << (double)total_track/(double)(all) << "µs per track" << " \n";
-	std::cout << succ << " successful problems out of " << n << ", " << (100.0*succ)/(double)n << "% \n";
-	std::cout << "Time " << (double)total/(double)n << "\n";
-	std::cout << "\n";
+	//std::cout << "\n";
+	std::cout << "Total time of tracking " << total_track << "µs, " << (double)total_track/(double)(n) << "µs per track" << " \n";
+	//std::cout << succ << " successful problems out of " << n << ", " << (100.0*succ)/(double)n << "% \n";
+	//std::cout << "Time " << (double)total/(double)n << "\n";
+	//std::cout << "\n";
 
 	return 0;
 }
