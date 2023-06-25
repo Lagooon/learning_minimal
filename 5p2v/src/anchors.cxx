@@ -137,9 +137,12 @@ int main(int argc, char **argv)
 	}
 	
 	//set up the array telling which nodes are active (=not yet covered)
-	bool active[n];
+	bool active[n], dm[n];
 	for(int i=0;i<n;i++)
+	{
 		active[i] = 1;
+		dm[i] = 0;
+	}
 
 	//find the dominating set of a given number of anchors
 	std::vector<int> dom;
@@ -149,27 +152,30 @@ int main(int argc, char **argv)
 		//select the node with the highest number of active neighbors
 		int best = -1;
 		int best_deg = 0;
+		double qb_deg = 0;
 		for(int i=0;i<n;i++)
-		{
-		
-			//find the number of active neighbors
-			int cur_deg = 0;
-			for(unsigned int j=0;j<G[i].nbs.size();j++)
+			if(dm[i]==0)
 			{
-				const int cur = G[i].nbs[j];
-				if(active[cur])
+			
+				//find the number of active neighbors
+				int cur_deg = 0;
+				for(unsigned int j=0;j<G[i].nbs.size();j++)
 				{
-					++cur_deg;
+					const int cur = G[i].nbs[j];
+					if(active[cur])
+					{
+						++cur_deg;
+					}
+				}
+				
+				//update
+				if((double)cur_deg / (n-dominated) + 0.5 * G[i].nbs.size() / n > qb_deg)
+				{
+					best_deg = cur_deg;
+					qb_deg = (double)cur_deg / (n-dominated) + 0.5 * G[i].nbs.size() / n;
+					best = i;
 				}
 			}
-			
-			//update
-			if(cur_deg > best_deg)
-			{
-				best_deg = cur_deg;
-				best = i;
-			}
-		}
 
 		//if no good node has been found, terminate
 		if(best == -1)
@@ -184,6 +190,7 @@ int main(int argc, char **argv)
 
 		//update the number of dominated problems
 		dom.push_back(best);
+		dm[best] = 1;
 		dominated = dominated + best_deg;
 
 		if(dom.size() >= anch_num)

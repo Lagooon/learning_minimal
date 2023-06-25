@@ -31,7 +31,7 @@ def get_args():
 	#parser.add_argument("--hyperparameter_search", action='store_true')
 	
 	parser.add_argument("--model", type=str, default="mlp")
-	parser.add_argument("--datafolder", type=str, default="MODEL")
+	parser.add_argument("--datafolder", type=str, default="230K")
 	parser.add_argument("--anchors", default=26, type=int)
 	#parser.add_argument("--early_stopping", action='store_true')
 	parser.add_argument("--seed", default=1, type=int)

@@ -27,8 +27,7 @@ SET(CMAKE_INSTALL_RUNTIME_DESTINATION bin)
 project( TWO_VIEW_MINIMAL_SOLVER_PIPELINE )
 
 # add packages
-find_package(Eigen3 REQUIRED)
-include_directories( ${EIGEN3_INCLUDE_DIRS} )
+include_directories( "/home/haohan/.local/lib/Eigen3" )
 include_directories(src)
 
 # add subdirectories

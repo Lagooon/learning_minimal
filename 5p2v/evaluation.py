@@ -36,7 +36,7 @@ def get_args():
 	#parser.add_argument("--early_stopping", action='store_true')
 	parser.add_argument("--seed", default=1, type=int)
 	parser.add_argument("--normalize", action='store_true')
-	parser.add_argument("--batch_size", default=128, type=int)
+	parser.add_argument("--batch_size", default=512, type=int)
 	parser.add_argument("--lr", default=1e-3, type=float)
 	#parser.add_argument("--min_lr", default=1e-6, type=float) 
 	parser.add_argument("--weight_decay", default=0, type=float)
@@ -68,7 +68,7 @@ def get_args():
 
 @torch.no_grad()
 def evaluate(net, test_dataset, f = None):
-	test_dl = torch.utils.data.DataLoader(test_dataset, batch_size=args.batch_size, num_workers = 4)
+	test_dl = torch.utils.data.DataLoader(test_dataset, batch_size=args.batch_size, num_workers = 16)
 
 	c1 = 0
 	c2 = 0
